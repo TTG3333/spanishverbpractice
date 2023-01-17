@@ -5,7 +5,7 @@ async function getData(url) {
     return response.json();
 }
 
-function parseData(data) {
+function chooseVerb(data) {
     var verbs = [];
     for (v in data) {
         verbs.push(v);
@@ -22,7 +22,7 @@ const prom = getData("./indicativo_preterito.json");
 var verbs, verb;
 prom.then(data => {
     verbs = data;
-    verb = parseData(data);
+    verb = chooseVerb(data);
     handleData(verb);
 })
 
@@ -37,13 +37,18 @@ function checkData(data, chosen) {
             document.getElementById(f + "_span").className = "incorrect";
         }
     }
-    verb = parseData(data);
+}
+
+function nextVerb() {
+    verb = chooseVerb(verbs);
     handleData(verb);
+    clearAnswers();
 }
 
 function clearAnswers() {
     for (f in forms) {
         f = forms[f];
         document.getElementById(f).value = "";
+        document.getElementById(f + "_span").innerHTML = "";
     }
 }
