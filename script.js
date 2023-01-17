@@ -10,7 +10,7 @@ function parseData(data) {
     for (v in data) {
         verbs.push(v);
     }
-    var verb = verbs[Math.floor(Math.random()*verbs.length)];
+    var verb = verbs[Math.floor(Math.random() * verbs.length)];
     return verb;
 }
 
@@ -21,20 +21,27 @@ function handleData(verb) {
 const prom = getData("./indicativo_preterito.json");
 var verbs, verb;
 prom.then(data => {
-    verbs=data;
+    verbs = data;
     verb = parseData(data);
     handleData(verb);
 })
 
 function checkData(data, chosen) {
     for (f in forms) {
-        f = forms[f]
+        f = forms[f];
         if (document.getElementById(f).value.toLowerCase() == data[chosen][f].toLowerCase()) {
-            document.getElementById(f+"_span").innerHTML = "Excelente!";
+            document.getElementById(f + "_span").innerHTML = "Excelente!";
         } else {
-            document.getElementById(f+"_span").innerHTML = data[chosen][f].toLowerCase();
+            document.getElementById(f + "_span").innerHTML = data[chosen][f].toLowerCase();
         }
     }
     verb = parseData(data);
     handleData(verb);
+}
+
+function clearAnswers() {
+    for (f in forms) {
+        f = forms[f];
+        document.getElementById(f).value = "";
+    }
 }
