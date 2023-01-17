@@ -31,8 +31,10 @@ function checkData(data, chosen) {
         f = forms[f];
         if (document.getElementById(f).value.toLowerCase() == data[chosen][f].toLowerCase()) {
             document.getElementById(f + "_span").innerHTML = "Excelente!";
+            document.getElementById(f + "_span").className = "correct";
         } else {
             document.getElementById(f + "_span").innerHTML = data[chosen][f].toLowerCase();
+            document.getElementById(f + "_span").className = "incorrect";
         }
     }
     verb = parseData(data);
