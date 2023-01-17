@@ -27,7 +27,6 @@ prom.then(data => {
 })
 
 function checkData(data, chosen) {
-    console.log(data[chosen]["form_1s"]);
     for (f in forms) {
         f = forms[f]
         if (document.getElementById(f).value == data[chosen][f]) {
