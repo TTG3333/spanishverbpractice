@@ -29,10 +29,10 @@ prom.then(data => {
 function checkData(data, chosen) {
     for (f in forms) {
         f = forms[f]
-        if (document.getElementById(f).value == data[chosen][f]) {
+        if (document.getElementById(f).value.toLowerCase() == data[chosen][f].toLowerCase()) {
             document.getElementById(f+"_span").innerHTML = "Excelente!";
         } else {
-            document.getElementById(f+"_span").innerHTML = data[chosen][f];
+            document.getElementById(f+"_span").innerHTML = data[chosen][f].toLowerCase();
         }
     }
     verb = parseData(data);
