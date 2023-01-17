@@ -42,13 +42,15 @@ function checkData(data, chosen) {
 function nextVerb() {
     verb = chooseVerb(verbs);
     handleData(verb);
-    clearAnswers();
+    clearAnswers(true);
 }
 
-function clearAnswers() {
+function clearAnswers(results=false) {
     for (f in forms) {
         f = forms[f];
         document.getElementById(f).value = "";
-        document.getElementById(f + "_span").innerHTML = "";
+        if (results) {
+            document.getElementById(f + "_span").innerHTML = "";
+        }
     }
 }
