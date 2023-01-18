@@ -5,3 +5,7 @@ span.correct {
 span.incorrect {
     color: #ff0000;
 }
+
+body {
+    background-color: #DFDFDF;
+}
