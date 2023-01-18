@@ -15,7 +15,7 @@ function chooseVerb(data) {
 }
 
 function handleData(verb) {
-    document.getElementById("verbe").innerHTML = verb;
+    document.getElementById("verb").innerHTML = verb;
 }
 
 const prom = getData("./indicativo_preterito.json");
@@ -53,4 +53,13 @@ function clearAnswers(results=false) {
             document.getElementById(f + "_span").innerHTML = "";
         }
     }
+}
+
+function findVerb() {
+    var choice = document.getElementById("verbChoice").value.toLowerCase();
+    if (choice in verbs) {
+        verb = choice;
+        handleData(verb);
+    }
+    document.getElementById("verbChoice").value = "";
 }
