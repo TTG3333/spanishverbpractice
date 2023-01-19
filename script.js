@@ -60,4 +60,5 @@ function findVerb() {
         handleData(verb);
     }
     document.getElementById("verbChoice").value = "";
+    clearAnswers();
 }
