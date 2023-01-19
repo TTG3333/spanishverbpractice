@@ -42,16 +42,14 @@ function checkData(data, chosen) {
 function nextVerb() {
     verb = chooseVerb(verbs);
     handleData(verb);
-    clearAnswers(true);
+    clearAnswers();
 }
 
-function clearAnswers(results=false) {
+function clearAnswers() {
     for (f in forms) {
         f = forms[f];
         document.getElementById(f).value = "";
-        if (results) {
-            document.getElementById(f + "_span").innerHTML = "";
-        }
+        document.getElementById(f + "_span").innerHTML = "";
     }
 }
 
