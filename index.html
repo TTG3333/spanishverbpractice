@@ -30,13 +30,18 @@
         <br \>
         <br \>
         <button value="Borrar" onclick="clearAnswers()">Borrar</button>
-        <button value="Verificar" onclick="checkData(verbs, verb)">Verificar</button>
+        <button value="Verificar" onclick="checkData()">Verificar</button>
         <button value="Siguiente verbo" onclick="nextVerb()">Siguiente verbo</button>
         <br \>
         <p>Si quiere eligir su propio verbo, escríbelo en el cuadro y luego presione eligir</p>
         <section><input type="text" id="verbChoice" value=""></section>
         <br \>
         <button value="Eligir" onclick="findVerb()">Eligir</button>
+        <br \>
+        <p>Si quiere eligir su propia lista de verbos, escríbe los verbos separados por un espacio en el cuadro y luego presione eligir</p>
+        <section><input type="text" id="verbList" value=""></section>
+        <br \>
+        <button value="Eligir" onclick="newVerbList()">Eligir</button>
     </body>
     <script src="script.js"></script>
 </html>
