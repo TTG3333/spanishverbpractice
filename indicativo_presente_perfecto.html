@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8">
+        <title>Indicativo Presente Perfecto</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="indicativo_presente_perfecto.json"></script>
+        <script>const fileName = "indicativo_presente_perfecto";</script>
+    </head>
+    <body>
+        <h1>Practicar la conjugación de verbos en indicativo presente perfecto</h1>
+        <h2>Verbo: <span id="verb"></span></h2>
+        <p>Instrucciones: Escribe los verbos(con acentos) y luego hace clic en el botón verificar. Si la corrección es naranja, hay una falla en los acentos.</p>
+        <br \>
+        <section>Primera persona singular: <input type="text" id="1s" value=""> <span id="1s_span"></span></section>
+        <br \>
+        <br \>
+        <section>Segunda persona singular: <input type="text" id="2s" value=""> <span id="2s_span"></span></section>
+        <br \>
+        <br \>
+        <section>Tercera persona singular: <input type="text" id="3s" value=""> <span id="3s_span"></span></section>
+        <br \>
+        <br \>
+        <section>Primera persona plural: <input type="text" id="1p" value=""> <span id="1p_span"></span></section>
+        <br \>
+        <br \>
+        <section>Segunda persona plural: <input type="text" id="2p" value=""> <span id="2p_span"></span></section>
+        <br \>
+        <br \>
+        <section>Tercera persona plural: <input type="text" id="3p" value=""> <span id="3p_span"></span></section>
+        <br \>
+        <br \>
+        <button value="Borrar" onclick="clearAnswers()">Borrar</button>
+        <button value="Verificar" onclick="checkData()">Verificar</button>
+        <button value="Siguiente verbo" onclick="nextVerb()">Siguiente verbo</button>
+        <br \>
+        <p>Si quiere elegir su propio verbo, escríbelo en el cuadro y luego hace clic en el botón elegir</p>
+        <section><input type="text" id="verbChoice" value=""></section>
+        <br \>
+        <button value="Elegir" onclick="findVerb()">Elegir</button>
+        <br \>
+        <p>Si quiere elegir su propia lista de verbos, escríbe los verbos separados por un espacio en el cuadro y luego hace clic en el botón elegir</p>
+        <section><input type="text" id="verbList" value=""></section>
+        <br \>
+        <button value="Elegir" onclick="newVerbList()">Elegir</button>
+    </body>
+    <script src="script.js"></script>
+</html>
