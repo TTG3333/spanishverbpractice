@@ -25,7 +25,7 @@ function changeVerb(verb) {
     document.getElementById("verb").innerHTML = verb;
 }
 
-const prom = getData("./indicativo_preterito.json");
+const prom = getData(fileName + ".json");
 var verbs, verbList, verb;
 prom.then(data => {
     verbs = data;
