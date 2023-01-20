@@ -12,4 +12,9 @@ span.incorrect {
 
 body {
     background-color: #DFDFDF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    font-family: Arial, Helvetica, sans-serif;
 }
