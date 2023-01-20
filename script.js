@@ -36,9 +36,16 @@ prom.then(data => {
 function checkData() {
     for (f in forms) {
         f = forms[f];
-        if (document.getElementById(f).value.toLowerCase() == verbs[verb][f].toLowerCase()) {
+        var value = document.getElementById(f).value.toLowerCase();
+        var normValue = value.normalize("NFD").replace(/\p{Diacritic}/gu, "");
+        var check = verbs[verb][f].toLowerCase();
+        var normCheck = check.normalize("NFD").replace(/\p{Diacritic}/gu, "");
+        if (value == check) {
             document.getElementById(f + "_span").innerHTML = "¡Excelente!";
             document.getElementById(f + "_span").className = "correct";
+        } else if (normValue == normCheck){
+            document.getElementById(f + "_span").innerHTML = verbs[verb][f].toLowerCase();
+            document.getElementById(f + "_span").className = "accentfault";
         } else {
             document.getElementById(f + "_span").innerHTML = verbs[verb][f].toLowerCase();
             document.getElementById(f + "_span").className = "incorrect";
