@@ -2,6 +2,10 @@ span.correct {
     color: #00BF00;
 }
 
+span.accentfault {
+    color: #f2c23d;
+}
+
 span.incorrect {
     color: #ff0000;
 }
