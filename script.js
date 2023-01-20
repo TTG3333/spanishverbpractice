@@ -1,5 +1,10 @@
 const forms = ["1s", "2s", "3s", "1p", "2p", "3p"];
 
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+    return array;
+}
+
 async function getData(url) {
     const response = await fetch(url);
     return response.json();
@@ -10,14 +15,14 @@ function getVerbList(data) {
     for (v in data) {
         verbs.push(v);
     }
+    verbs = shuffle(verbs);
     return verbs;
 }
 
-function chooseRandomVerb(vList) {
-    var newVerb = vList[Math.floor(Math.random() * vList.length)];
-    while (vList.length > 1 && newVerb == verb) {
-        var newVerb = vList[Math.floor(Math.random() * vList.length)];
-    }
+function chooseNextVerb(vList) {
+    var newVerb = vList[0];
+    vList.push(vList[0]);
+    vList.splice(0, 1);
     return newVerb;
 }
 
@@ -54,7 +59,7 @@ function checkData() {
 }
 
 function nextVerb() {
-    verb = chooseRandomVerb(verbList);
+    verb = chooseNextVerb(verbList);
     changeVerb(verb);
     clearAnswers();
 }
@@ -93,6 +98,7 @@ function newVerbList() {
     if (newList.length == 0) {
         return;
     }
+    shuffle(newList);
     verbList = newList;
     nextVerb();
 }
