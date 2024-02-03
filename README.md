@@ -23,3 +23,5 @@ Available verb tenses:
 - Imperativo Negativo
 
 The site can be accessed [here](https://ttg3333.github.io/spanishverbpractice/)
+
+Credits to: Spanish Verb Forms [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) (View on [Github](https://github.com/ghidinelli/fred-jehle-spanish-verbs))
